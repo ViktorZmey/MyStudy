@@ -14,10 +14,6 @@ public abstract class KeywordAnalyzer implements TextAnalyzer {
     
     protected abstract TextAnalyzerLabel getLabel();
     
-//    void foo() {
-//        processText("");
-//    }
-    
     @Override
     public final TextAnalyzerLabel processText(String text) {
         for (String keyword : getKeywords()) {
