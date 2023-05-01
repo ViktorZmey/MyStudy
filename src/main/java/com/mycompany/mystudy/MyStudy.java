@@ -13,6 +13,7 @@ import com.mycompany.rekursivnyyvyvodchisel.*;
 import com.mycompany.classstudentaspirant.StudentAndAspirantTest;
 import com.mycompany.vehicles.*;
 import com.mycompany.callerclassandmethodname.*;
+import com.mycompany.robotconnection.*;
 
 /**
  *
@@ -28,8 +29,9 @@ public class MyStudy {
 //        System.out.println(Arrays.toString(RecursiveNumberOutput.recursion(20, 5)));
 //        StudentAndAspirantTest.run();
 //        CallerAndMethodTest.anotherMethod();
-        System.out.println(CallerClassAndMethodName.getCallerClassAndMethodName());
-        CallerClassAndMethodNameTest.run();
+//        System.out.println(CallerClassAndMethodName.getCallerClassAndMethodName());
+//        CallerClassAndMethodNameTest.run();
 //        CarTest.run();
+        RobotConnectionTest.run();
     }
 }
