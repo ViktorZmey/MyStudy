@@ -15,7 +15,7 @@ public abstract class Bear extends Animal{
     }
 
     @Override
-    public abstract void getDescription();
+    public abstract String getDescription();
 
     @Override
     public abstract void eat();

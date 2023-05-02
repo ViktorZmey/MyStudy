@@ -13,8 +13,8 @@ public class AnimalTest {
     public static void run() {
         Cat cat = new Cat("Devers") {
             @Override
-            public void getDescription() {
-                System.out.println("vchcc");
+            public String getDescription() {
+                return "dbndnd"; 
             }
 
             @Override
@@ -30,8 +30,8 @@ public class AnimalTest {
         
         Dog dog = new Dog("Reks") {
             @Override
-            public void getDescription() {
-                System.out.println("v n chjmcfm");
+            public String getDescription() {
+                return "ddnwww";
             }
 
             @Override
@@ -47,8 +47,8 @@ public class AnimalTest {
         
         Bear bear = new Bear("Balu") {
             @Override
-            public void getDescription() {
-                System.out.println("chcmncvmm");
+            public String getDescription() {               
+                return " fbhdxhndhjn";
             }
 
             @Override

@@ -11,6 +11,6 @@ package com.mycompany.classanimal;
 public class Vet {
     
     public static void treatAnimal(Animal animal){
-        System.out.println(animal.name + " " + animal.getDescription());
+        System.out.println(animal.getName() + " " + animal.getDescription());
     }
 }
