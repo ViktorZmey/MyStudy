@@ -14,6 +14,7 @@ import com.mycompany.classstudentaspirant.StudentAndAspirantTest;
 import com.mycompany.vehicles.*;
 import com.mycompany.callerclassandmethodname.*;
 import com.mycompany.robotconnection.*;
+import com.mycompany.classanimal.*;
 
 /**
  *
@@ -32,6 +33,7 @@ public class MyStudy {
 //        System.out.println(CallerClassAndMethodName.getCallerClassAndMethodName());
 //        CallerClassAndMethodNameTest.run();
 //        CarTest.run();
-        RobotConnectionTest.run();
+//        RobotConnectionTest.run();
+//        AnimalTest.run();
     }
 }
