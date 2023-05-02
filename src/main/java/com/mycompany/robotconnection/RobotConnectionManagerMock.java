@@ -14,17 +14,17 @@ import java.util.logging.Logger;
 
 class RobotConnectionManagerMock implements RobotConnectionManager {
     
-    RobotConnection getRobotConnectionStub;
-    RuntimeException[] getRobotConnectionThrowableStub = new RuntimeException[100];
+    RobotConnection getConnectionStub;
+    RuntimeException[] getConnectionRuntimeExceptionStub = new RuntimeException[100];
     int getConnectionInvokedCount = 0;
     
     @Override
     public RobotConnection getConnection() {
         getConnectionInvokedCount++;
-        RuntimeException t = getRobotConnectionThrowableStub[getConnectionInvokedCount - 1];
+        RuntimeException t = getConnectionRuntimeExceptionStub[getConnectionInvokedCount - 1];
         if (t != null) {
             throw t;
         }
-        return getRobotConnectionStub;
+        return getConnectionStub;
     }
 }

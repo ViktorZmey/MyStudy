@@ -17,14 +17,14 @@ public class RobotConnectionTest {
         test2();
         test3();
         test4();
+        test5();
     }
-    
-    
+        
     static void test1() {
         // Given
         RobotConnectionManagerMock robotConnectionManagerMock = new RobotConnectionManagerMock();
         RobotConnectionMock robotConnectionMock = new RobotConnectionMock();
-        robotConnectionManagerMock.getRobotConnectionStub = robotConnectionMock;
+        robotConnectionManagerMock.getConnectionStub = robotConnectionMock;
         
         // When
         moveRobot(robotConnectionManagerMock, 10, 15);
@@ -48,7 +48,7 @@ public class RobotConnectionTest {
         // Given
         RobotConnectionManagerMock robotConnectionManagerMock = new RobotConnectionManagerMock();
         RuntimeException expectedEception = new RuntimeException("My exeption");
-        robotConnectionManagerMock.getRobotConnectionThrowableStub[0] = expectedEception;
+        robotConnectionManagerMock.getConnectionRuntimeExceptionStub[0] = expectedEception;
         
         // When
         try {
@@ -73,11 +73,9 @@ public class RobotConnectionTest {
         RuntimeException expectedEception1 = new RobotConnectionException("My exeption1");
         RuntimeException expectedEception2 = new RobotConnectionException("My exeption1");
         RuntimeException expectedEception3 = new RobotConnectionException("My exeption1");
-        RuntimeException expectedEception4 = new RobotConnectionException("My exeption1");
-        robotConnectionManagerMock.getRobotConnectionThrowableStub[0] = expectedEception1;
-        robotConnectionManagerMock.getRobotConnectionThrowableStub[1] = expectedEception2;
-        robotConnectionManagerMock.getRobotConnectionThrowableStub[2] = expectedEception3;
-        robotConnectionManagerMock.getRobotConnectionThrowableStub[3] = expectedEception4;
+        robotConnectionManagerMock.getConnectionRuntimeExceptionStub[0] = expectedEception1;
+        robotConnectionManagerMock.getConnectionRuntimeExceptionStub[1] = expectedEception2;
+        robotConnectionManagerMock.getConnectionRuntimeExceptionStub[2] = expectedEception3;
         
         // When
         try {
@@ -97,11 +95,74 @@ public class RobotConnectionTest {
     }
     
     static void test4() {
-        // TODO: метод moveRobotTo кидает больше 3 исключений
+        // Given
+        RobotConnectionManagerMock robotConnectionManagerMock = new RobotConnectionManagerMock();
+        RobotConnectionMock robotConnectionMock = new RobotConnectionMock();
+        robotConnectionManagerMock.getConnectionStub = robotConnectionMock;
+        RuntimeException expectedEception1 = new RobotConnectionException("My exeption1");
+        RuntimeException expectedEception2 = new RobotConnectionException("My exeption1");
+        RuntimeException expectedEception3 = new RobotConnectionException("My exeption1");
+        robotConnectionMock.moveRobotToRuntimeExceptionStub[0] = expectedEception1;
+        robotConnectionMock.moveRobotToRuntimeExceptionStub[1] = expectedEception2;
+        robotConnectionMock.moveRobotToRuntimeExceptionStub[2] = expectedEception3;
         
-        // TODO: метод moveRobotTo кидает 2 исключения а на 3 срабатывает
+        // When
+        try {
+            moveRobot(robotConnectionManagerMock, 10, 15);
+        } catch(Exception ex) {
+            // Then
+            if (ex != expectedEception3) {
+                System.out.println("Проброшено неверное исключение");
+                return;
+            }
+        } finally {
+            if (robotConnectionManagerMock.getConnectionInvokedCount != 3) {
+                System.out.println("Неверное количество попыток получить соеденение");
+                return;
+            }
+            if (robotConnectionMock.moveRobotToInvokedCount != 3) {
+                System.out.println("Неверное количество попыток движения");
+                return;
+            }
+            if (robotConnectionMock.closeInvokedCount != robotConnectionManagerMock.getConnectionInvokedCount){
+                System.out.println("Соединение с роботом не было закрыто");
+                return;
+            }
+        }
     }
-            
+           
+    static void test5() {       
+        // Given
+        RobotConnectionManagerMock robotConnectionManagerMock = new RobotConnectionManagerMock();
+        RobotConnectionMock robotConnectionMock = new RobotConnectionMock();
+        robotConnectionManagerMock.getConnectionStub = robotConnectionMock;
+        robotConnectionMock.moveRobotToRuntimeExceptionStub[0] = new RobotConnectionException("My exeption");
+
+        // When
+        try {
+            moveRobot(robotConnectionManagerMock, 10, 15);
+        } catch(Exception ex) {
+            // Then
+            if (ex != null) {
+                System.out.println("Получено исключение, что не верно");
+                return;
+            }
+        } finally {
+            if (robotConnectionManagerMock.getConnectionInvokedCount != 2) {
+                System.out.println("Неверное количество попыток получить соеденение");
+                return;
+            }
+            if (robotConnectionMock.moveRobotToInvokedCount != 2) {
+                System.out.println("Неверное количество попыток движения");
+                return;
+            }
+            if (robotConnectionMock.closeInvokedCount != robotConnectionManagerMock.getConnectionInvokedCount){
+                System.out.println("Соединение с роботом не было закрыто");
+                return;
+            }
+        }
+    }
+    
     static void moveRobot(RobotConnectionManager robotConnectionManager, int toX, int toY) {
         int attemptCount = 3;
         for (int i = 0; i < attemptCount; i++) {
