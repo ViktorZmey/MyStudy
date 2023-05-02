@@ -10,7 +10,7 @@ package com.mycompany.classanimal;
  */
 public class Vet {
     
-    void treatAnimal(Animal animal){
-        
+    public static void treatAnimal(Animal animal){
+        System.out.println(animal.name + " " + animal.getDescription());
     }
 }
