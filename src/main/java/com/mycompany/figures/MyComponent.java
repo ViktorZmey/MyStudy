@@ -19,8 +19,7 @@ public class MyComponent extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g); 
-        g.setColor(Color.red);
-        g.drawRect(300, 20, 300, 500);
+        
     }
     
 }

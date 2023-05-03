@@ -16,6 +16,9 @@ public class FiguresTest {
     }
     
     static void test() {
+        Shape circlShape = new Circle(50, 50, 50, "red");
+        Shape rectShape = new Rectangle(200, 200, 100, 100, "red");
+        Shape [] figureShapes = {circlShape, rectShape};
         Drawing dr = new Drawing("Hz");
         dr.setVisible(true);
     }

@@ -15,13 +15,38 @@ import java.awt.Graphics;
 
 public class Circle extends Shape{
 
-    public Circle(String color) {
+    private int x;
+    private int y;
+    private int radius;
+
+    public Circle(int x, int y, int radius, String color) {
         super(color);
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getRadius() {
+        return radius;
+    }
+
+    public String getColor() {
+        return color;
+    }
+    
+    
+    
     @Override
     public void draw() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       
     }
     
     

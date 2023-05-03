@@ -15,13 +15,43 @@ import java.awt.Graphics;
 
 public class Rectangle extends Shape{
 
-    public Rectangle(String color) {
+    private int x;
+    private int y;
+    private int width;
+    private int height;
+
+    public Rectangle(int x, int y, int width, int height, String color) {
         super(color);
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
     
     
     public  void  draw(){
-        
+        return;
     }
     
 }

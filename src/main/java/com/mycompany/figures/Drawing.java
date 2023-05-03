@@ -14,7 +14,7 @@ import javax.swing.JFrame;
  * @author viktor
  */
 public class Drawing extends JFrame {
-    
+    Shape shape;
     public Drawing(String name){
         super (name);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
