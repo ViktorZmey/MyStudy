@@ -16,6 +16,7 @@ import com.mycompany.callerclassandmethodname.*;
 import com.mycompany.robotconnection.*;
 import com.mycompany.classanimal.*;
 import com.mycompany.figures.*;
+import com.mycompany.Internetshop.*;
 
 /**
  *
@@ -37,5 +38,6 @@ public class MyStudy {
 //        RobotConnectionTest.run();
 //        AnimalTest.run();
 //        FiguresTest.run();
+//        InternetShopTest.run();
     }
 }
