@@ -4,6 +4,8 @@
  */
 package com.mycompany.figures;
 
+import java.awt.Color;
+
 /**
  *
  * @author viktor
@@ -16,10 +18,10 @@ public class FiguresTest {
     }
     
     static void test() {
-        Shape circlShape = new Circle(50, 50, 50, "red");
-        Shape rectShape = new Rectangle(200, 200, 100, 100, "red");
-        Shape [] figureShapes = {circlShape, rectShape};
-        Drawing dr = new Drawing("Hz");
+        Shape circleShape = new Circle(50, 50, 50, Color.green);
+        Shape rectShape = new Rectangle(200, 200, 100, 100, Color.red);
+        Shape [] figureShapes = {circleShape, rectShape};
+        Drawing dr = new Drawing("Hz", figureShapes);
         dr.setVisible(true);
     }
 }

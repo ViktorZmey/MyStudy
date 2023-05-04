@@ -4,22 +4,26 @@
  */
 package com.mycompany.figures;
 
-import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
-import javax.swing.JComponent;
+import javax.swing.*;
 
 /**
  *
  * @author viktor
  */
 public class MyComponent extends JComponent {
+    
+    private Shape[] shapes;
+    
+    public MyComponent(Shape[] shapes) {
+        this.shapes = shapes;
+    }
 
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g); 
-        
+        super.paintComponent(g);
+        for (Shape shape : shapes) {
+            shape.draw(g);
+        }
     }
-    
 }

@@ -19,7 +19,7 @@ public class Circle extends Shape{
     private int y;
     private int radius;
 
-    public Circle(int x, int y, int radius, String color) {
+    public Circle(int x, int y, int radius, Color color) {
         super(color);
         this.x = x;
         this.y = y;
@@ -38,18 +38,13 @@ public class Circle extends Shape{
         return radius;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
     
-    
-    
     @Override
-    public void draw() {
-       
+    public void draw(Graphics g) {
+       g.setColor(color);
+       g.drawOval(x, y, radius, radius);
     }
-    
-    
-    
-    
 }

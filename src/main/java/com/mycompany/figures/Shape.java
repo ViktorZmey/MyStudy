@@ -4,17 +4,19 @@
  */
 package com.mycompany.figures;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  *
  * @author viktor
  */
 public abstract class Shape {
-    String color;
+    protected Color color;
 
-    public Shape(String color) {
+    public Shape(Color color) {
         this.color = color;
     }
    
-    public abstract void  draw();
-    
+    public abstract void draw(Graphics g);
 }

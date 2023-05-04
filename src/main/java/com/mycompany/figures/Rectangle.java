@@ -4,23 +4,22 @@
  */
 package com.mycompany.figures;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  *
  * @author viktor
  */
 
-import javax.swing.JPanel;
-import java.awt.Color;
-import java.awt.Graphics;
-
-public class Rectangle extends Shape{
+public class Rectangle extends Shape {
 
     private int x;
     private int y;
     private int width;
     private int height;
 
-    public Rectangle(int x, int y, int width, int height, String color) {
+    public Rectangle(int x, int y, int width, int height, Color color) {
         super(color);
         this.x = x;
         this.y = y;
@@ -44,14 +43,13 @@ public class Rectangle extends Shape{
         return height;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
-
     
-    
-    public  void  draw(){
-        return;
+    @Override
+    public void draw(Graphics g) {
+       g.setColor(color);
+       g.drawRect(x, y, width, height);
     }
-    
 }
