@@ -54,6 +54,11 @@ public class User {
         final User other = (User) obj;
         return Objects.equals(this.login, other.login);
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "login=" + login + ", password=" + password + ", basket=" + basket + '}';
+    }
     
     
 }

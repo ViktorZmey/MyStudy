@@ -10,19 +10,24 @@ package com.mycompany.Internetshop;
  */
 public class Category {
     private String denomination;
-    Product[] produktProducts;
+    Product[] products;
 
     public Category(String denomination, Product[] poduktProducts) {
         this.denomination = denomination;
-        this.produktProducts = poduktProducts;
+        this.products = poduktProducts;
     }
 
     public String getDenomination() {
         return denomination;
     }
 
-    public Product[] getPoduktProducts() {
-        return produktProducts;
+    public Product[] getProducts() {
+        return products;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" + "denomination=" + denomination + ", products=" + products + '}';
     }
     
     

@@ -62,7 +62,9 @@ public class Product {
         }
         return Objects.equals(this.itemName, other.itemName);
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Product{" + "itemName=" + itemName + ", price=" + price + ", rating=" + rating + '}';
+    }
 }

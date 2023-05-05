@@ -25,12 +25,14 @@ public class InternetShopTest {
         Product[] arrProducts3 = {product3, product1, product5}; 
         Product[] arrProducts4 = {product1, product2, product3, product4, product5}; 
         Category category1 = new Category("desserts", arrProducts1);
-        Category category2 = new Category("potables", arrProducts2);
-        System.out.println(Arrays.toString(category1.getPoduktProducts()));       
+        Category category2 = new Category("potables", arrProducts2);               
         Basket basket1 = new Basket(arrProducts3);
         Basket basket2 = new Basket(arrProducts4);
         User user1 = new User("Vasi", 15645, basket1);
         User user2 = new User("Vani", 1111, basket2);
+        System.out.println(Arrays.toString(category1.getProducts()));
+        System.out.println(Arrays.toString(category2.getProducts()));
         System.out.println(user1.getBasket());
+        System.out.println(user2.getBasket());
     }
 }

@@ -4,6 +4,7 @@
  */
 package com.mycompany.Internetshop;
 
+import java.util.Arrays;
 /**
  *
  * @author viktor
@@ -18,6 +19,9 @@ public class Basket {
     public Product[] getPurchasedProducts() {
         return purchasedProducts;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Basket{" + "purchasedProducts=" + Arrays.toString(purchasedProducts) + '}';
+    }  
 }
