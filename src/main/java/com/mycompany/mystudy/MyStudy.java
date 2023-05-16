@@ -17,13 +17,14 @@ import com.mycompany.robotconnection.*;
 import com.mycompany.classanimal.*;
 import com.mycompany.figures.*;
 import com.mycompany.Internetshop.*;
+import com.mycompany.postalsystem.*;
 
 /**
  *
  * @author viktor
  */
 public class MyStudy {
-
+      
     public static void main(String[] args) {
 //        ClassPhoneTests.run();
 //        ClassPersonTests.run();
@@ -38,6 +39,7 @@ public class MyStudy {
 //        RobotConnectionTest.run();
 //        AnimalTest.run();
 //        FiguresTest.run();
-//        InternetShopTest.run();
-    }
+//        InternetShopTest.run();       
+//        PostalSystemTest.run();
+    } 
 }
