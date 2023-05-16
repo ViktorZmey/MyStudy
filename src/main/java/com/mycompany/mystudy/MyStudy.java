@@ -18,6 +18,7 @@ import com.mycompany.classanimal.*;
 import com.mycompany.figures.*;
 import com.mycompany.Internetshop.*;
 import com.mycompany.postalsystem.*;
+import com.mycompany.logging.*;
 
 /**
  *
@@ -41,5 +42,6 @@ public class MyStudy {
 //        FiguresTest.run();
 //        InternetShopTest.run();       
 //        PostalSystemTest.run();
+//        ClassTest.run();
     } 
 }
