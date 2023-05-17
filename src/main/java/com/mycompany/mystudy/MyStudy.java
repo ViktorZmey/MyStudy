@@ -19,6 +19,7 @@ import com.mycompany.figures.*;
 import com.mycompany.Internetshop.*;
 import com.mycompany.postalsystem.*;
 import com.mycompany.logging.*;
+import com.mycompany.methodchecksum.*;
 
 /**
  *
@@ -43,5 +44,6 @@ public class MyStudy {
 //        InternetShopTest.run();       
 //        PostalSystemTest.run();
 //        ClassTest.run();
+        MethodChecksum.run();
     } 
 }
