@@ -4,6 +4,7 @@
 
 package com.mycompany.mystudy;
 import java.util.*;
+import java.io.*;
 
 import com.mycompany.classphone.ClassPhoneTests;
 import com.mycompany.classperson.ClassPersonTests;
@@ -19,6 +20,7 @@ import com.mycompany.figures.*;
 import com.mycompany.Internetshop.*;
 import com.mycompany.postalsystem.*;
 import com.mycompany.logging.*;
+import com.mycompany.methodchecksum.*;
 
 /**
  *
@@ -26,7 +28,7 @@ import com.mycompany.logging.*;
  */
 public class MyStudy {
       
-    public static void main(String[] args) {
+    public static void main(String[] args) {        
 //        ClassPhoneTests.run();
 //        ClassPersonTests.run();
 //        ClassMatrixTest.run();
@@ -43,5 +45,6 @@ public class MyStudy {
 //        InternetShopTest.run();       
 //        PostalSystemTest.run();
 //        ClassTest.run();
+//        MethodChecksum.run();
     } 
 }
