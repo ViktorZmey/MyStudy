@@ -21,6 +21,7 @@ import com.mycompany.Internetshop.*;
 import com.mycompany.postalsystem.*;
 import com.mycompany.logging.*;
 import com.mycompany.methodchecksum.*;
+import com.mycompany.separatorcharacter.*;
 
 /**
  *
@@ -46,5 +47,6 @@ public class MyStudy {
 //        PostalSystemTest.run();
 //        ClassTest.run();
 //        MethodChecksum.run();
+//        SeparatorCharacter.run();
     } 
 }
