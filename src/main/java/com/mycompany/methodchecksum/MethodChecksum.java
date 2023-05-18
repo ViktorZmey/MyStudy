@@ -10,30 +10,30 @@ import java.io.*;
  * @author viktor
  */
 public class MethodChecksum {
-    public  static void run() throws IOException {
+    public  static void run() {
         test();
     }
     
-    public static void test() throws IOException {
-        InputStream stream;
-        int result;
-        stream = getStream( new byte[] { 0x33, 0x45, 0x01});
-
-        result = checkSumOfStream(stream);
-        System.out.print(result);
+    static void test() {        
+        int result = 0;
+        InputStream stream = getStream(new byte[] {0x33, 0x45, 0x01});
+        try {
+            result = checkSumOfStream(stream);           
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        System.out.print(result);        
     }
        
-    public static InputStream getStream(byte [] data)  {
-        return new ByteArrayInputStream (data);
+    static InputStream getStream(byte[] data) {
+        return new ByteArrayInputStream(data);
     }
     
-    public static int checkSumOfStream(InputStream inputStream) throws IOException {
-     int checkSum = 0;
-    int peremennaya = inputStream.read();
-    while (peremennaya != -1) {            
-        checkSum = Integer.rotateLeft(checkSum,1) ^ peremennaya;
-        peremennaya = inputStream.read();
+    static int checkSumOfStream(InputStream inputStream) throws IOException {
+        int checkSum = 0;
+        for(int byteValue = inputStream.read(); byteValue > -1; byteValue = inputStream.read()) {
+            checkSum = Integer.rotateLeft(checkSum,1) ^ byteValue;
         }
-    return checkSum;
+        return checkSum;
     }
 }
