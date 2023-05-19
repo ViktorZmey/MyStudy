@@ -4,6 +4,9 @@
  */
 package com.mycompany.sixdecimalplaces;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Locale;
 import java.util.Scanner;
 /**
@@ -13,11 +16,18 @@ import java.util.Scanner;
 public class SixDecimalPlacesTest {
     public static void run() {
         test1();
-
     }
     
-    static void test1() {        
-        Scanner sc = new Scanner(System.in);
+    static void test1() {
+        File initialFile = new File("/Users/viktor/Documents/MyProjects/MyStudy/src/main/java/com/mycompany/sixdecimalplaces/test.txt");
+        InputStream targetStream;
+        try {
+            targetStream = new FileInputStream(initialFile);
+        } catch (Exception ex) {
+            return;
+        }
+        
+        Scanner sc = new Scanner(targetStream);
         double number = 0;
         double sumdouble = 0.0;
         
@@ -31,8 +41,5 @@ public class SixDecimalPlacesTest {
         }
         sc.close();
         System.out.printf(Locale.UK, "%.6f", sumdouble);
-        
     }
-    
-    
 }
