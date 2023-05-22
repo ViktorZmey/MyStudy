@@ -24,6 +24,7 @@ import com.mycompany.methodchecksum.*;
 import com.mycompany.separatorcharacter.*;
 import com.mycompany.sixdecimalplaces.*;
 import com.mycompany.deserializeanimalarray.*;
+import com.mycompany.genericpair.*;
 
 /**
  *
@@ -52,5 +53,6 @@ public class MyStudy {
 //        SeparatorCharacter.run();
 //        SixDecimalPlacesTest.run();
 //        DeserializeAnimalArrayTest.run();
+//        GenericPairTest.run();
     } 
 }
