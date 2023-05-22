@@ -21,65 +21,50 @@ import java.util.logging.Logger;
  */
 public class DeserializeAnimalArrayTest {
 
-    private static Animal[] animals;
+    private static Animal[] animals = {
+        new Animal("AAA"),
+        new Animal("BBB"),
+        new Animal("CCC"),
+        new Animal("DDD"),
+        new Animal("EEE")
+    };
+    
+    private static Logger LOGGER = Logger.getLogger(DeserializeAnimalArrayTest.class.getName());
+    
+    
     public static void run()  {
         test();
     }
     
-    static void test()  {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        ObjectOutputStream kit = null;      
+    static void test() {   
         try {
-            kit = new ObjectOutputStream(byteArrayOutputStream);
-        } catch (IOException ex) {
-            Logger.getLogger(DeserializeAnimalArrayTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Integer quantity = 5;
-        try {
-            kit.writeInt(quantity);
-        } catch (IOException ex) {
-            Logger.getLogger(DeserializeAnimalArrayTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Animal animal1 = new Animal("AAA");
-        Animal animal2 = new Animal("BBB");
-        Animal animal3 = new Animal("CCC");
-        Animal animal4 = new Animal("DDD");
-        Animal animal5 = new Animal("EEE");
-        try {
-            kit.writeObject(animal1);
-            kit.writeObject(animal2);
-            kit.writeObject(animal3);
-            kit.writeObject(animal4);
-            kit.writeObject(animal5);
-        } catch (IOException ex) {
-            Logger.getLogger(DeserializeAnimalArrayTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
-             
-        try {
-            animals = deserializeAnimalArray(byteArrayOutputStream.toByteArray());
-        } catch (IOException ex) {
-            Logger.getLogger(DeserializeAnimalArrayTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        for (Animal animal : animals) {            
-            System.out.println(Arrays.toString(animals));
-        }
-        
+            String[] strs = {"a", "b"};
+            var deserializeAnimals = deserializeAnimalArray(serialize(strs));
+            for (Animal deserializeAnimal : deserializeAnimals) {
+                System.out.println(deserializeAnimal);
+            }
+        } catch (Exception ex) {
+            LOGGER.log(Level.SEVERE, null, ex);
+        }  
     }
     
-    public static Animal[] deserializeAnimalArray(byte[] data) throws IOException {
-        Animal[] animals = null;
-        try (ObjectInputStream newThread = new ObjectInputStream(new ByteArrayInputStream(data))) {
-            Integer numAnimalsInteger = newThread.readInt();
-            animals = new Animal[numAnimalsInteger];
-            for(int i = 0; i < numAnimalsInteger; i++) {
-                animals[i] = (Animal) newThread.readObject();
-               
-            }            
-        } catch (EOFException | ClassNotFoundException e) {
-            throw new IllegalArgumentException(e);
-        } catch(IOException | ClassCastException e) {
-            throw new IllegalArgumentException(e);
-        }              
-    return animals;
+    static <T> byte[] serialize(T[] objects) throws Exception {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream); 
+        objectOutputStream.writeInt(animals.length);
+        for (T obj : objects) {            
+            objectOutputStream.writeObject(obj);
+        }
+        return byteArrayOutputStream.toByteArray();
+    }
+    
+    static Animal[] deserializeAnimalArray(byte[] data) throws Exception {
+        ObjectInputStream objectInputStream = new ObjectInputStream(new ByteArrayInputStream(data));
+        Integer animalsCount = objectInputStream.readInt();
+        Animal[] result = new Animal[animalsCount];
+        for(int i = 0; i < animalsCount; i++) {
+            result[i] = (Animal)objectInputStream.readObject();
+        }  
+        return result;
     }
 }

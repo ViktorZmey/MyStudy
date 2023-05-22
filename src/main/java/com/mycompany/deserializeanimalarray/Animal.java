@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author viktor
  */
-public class Animal implements Serializable{
+public class Animal implements Serializable {
     private final String name;
 
     public Animal(String name) {
@@ -24,5 +24,10 @@ public class Animal implements Serializable{
             return Objects.equals(name, ((Animal) obj).name);
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" + "name=" + name + '}';
     }
 }
