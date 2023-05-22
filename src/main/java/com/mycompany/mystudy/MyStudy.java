@@ -22,6 +22,7 @@ import com.mycompany.postalsystem.*;
 import com.mycompany.logging.*;
 import com.mycompany.methodchecksum.*;
 import com.mycompany.separatorcharacter.*;
+import com.mycompany.sixdecimalplaces.*;
 
 /**
  *
@@ -48,5 +49,6 @@ public class MyStudy {
 //        ClassTest.run();
 //        MethodChecksum.run();
 //        SeparatorCharacter.run();
+//        SixDecimalPlacesTest.run();
     } 
 }
