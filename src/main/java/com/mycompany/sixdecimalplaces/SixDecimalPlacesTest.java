@@ -19,7 +19,7 @@ public class SixDecimalPlacesTest {
     }
     
     static void test1() {
-        File initialFile = new File("/Users/viktor/Documents/MyProjects/MyStudy/src/main/java/com/mycompany/sixdecimalplaces/test.txt");
+        File initialFile = new File("./src/main/java/com/mycompany/sixdecimalplaces/test.txt");
         InputStream targetStream;
         try {
             targetStream = new FileInputStream(initialFile);
@@ -28,13 +28,11 @@ public class SixDecimalPlacesTest {
         }
         
         Scanner sc = new Scanner(targetStream);
-        double number = 0;
         double sumdouble = 0.0;
         
-        while(sc.hasNext()==true){
-            if(sc.hasNextDouble()) {
-                number = sc.nextDouble();
-                sumdouble += number;
+        while (sc.hasNext()==true) {
+            if (sc.hasNextDouble()) {                
+                sumdouble += sc.nextDouble();
             } else {
                 sc.next();
             }        
