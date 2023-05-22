@@ -23,6 +23,7 @@ import com.mycompany.logging.*;
 import com.mycompany.methodchecksum.*;
 import com.mycompany.separatorcharacter.*;
 import com.mycompany.sixdecimalplaces.*;
+import com.mycompany.deserializeanimalarray.*;
 
 /**
  *
@@ -50,5 +51,6 @@ public class MyStudy {
 //        MethodChecksum.run();
 //        SeparatorCharacter.run();
 //        SixDecimalPlacesTest.run();
+//        DeserializeAnimalArrayTest.run();
     } 
 }
