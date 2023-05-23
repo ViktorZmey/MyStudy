@@ -25,11 +25,15 @@ import com.mycompany.methodchecksum.*;
 import com.mycompany.separatorcharacter.*;
 import com.mycompany.sixdecimalplaces.*;
 import com.mycompany.deserializeanimalarray.*;
+<<<<<<< HEAD
 import com.mycompany.genericpair.*;
 =======
 import com.mycompany.convertsthemtoastring.*;
 import java.io.IOException;
 >>>>>>> 19d257e (решение с тестами // и вторым способом  из интернета)
+=======
+import com.mycompany.symmetricdifference.*;
+>>>>>>> 759f8f0 (Симметрическая разность множеств// не сданное решение)
 
 /**
  *
@@ -63,9 +67,13 @@ public class MyStudy {
 //        SeparatorCharacter.run();
 //        SixDecimalPlacesTest.run();
 //        DeserializeAnimalArrayTest.run();
+<<<<<<< HEAD
 //        GenericPairTest.run();
 =======
         ConvertsThemToAStringTest.run();
 >>>>>>> 19d257e (решение с тестами // и вторым способом  из интернета)
+=======
+        SymmetricDifferenceTest.run();
+>>>>>>> 759f8f0 (Симметрическая разность множеств// не сданное решение)
     } 
 }
