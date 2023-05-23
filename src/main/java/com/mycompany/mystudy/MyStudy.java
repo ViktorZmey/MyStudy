@@ -27,6 +27,7 @@ import com.mycompany.deserializeanimalarray.*;
 import com.mycompany.genericpair.*;
 import com.mycompany.convertsthemtoastring.*;
 import com.mycompany.symmetricdifference.*;
+import com.mycompany.removingevenpositions.*;
 
 /**
  *
@@ -58,5 +59,6 @@ public class MyStudy {
 //        GenericPairTest.run();
 //        ConvertsThemToAStringTest.run();
 //        SymmetricDifferenceTest.run();
+//        RemovingEvenPositions.run();
     } 
 }
