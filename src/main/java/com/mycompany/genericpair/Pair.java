@@ -10,9 +10,9 @@ import java.util.Objects;
  *
  * @author viktor
  */
-class Pair  <V1 , V2> {    
-    private final  V1 value1;
-    private final  V2 value2;
+class Pair <V1, V2> {    
+    private final V1 value1;
+    private final V2 value2;
     
     Pair(V1 variable1, V2 variable2) {
         value1 = variable1;
@@ -53,7 +53,7 @@ class Pair  <V1 , V2> {
         return Objects.equals(this.value2, other.value2);
     }
         
-    public static <V1, V2> Pair<V1, V2> of(V1 variable1, V2 variable2){
+    public static <V1, V2> Pair<V1, V2> of(V1 variable1, V2 variable2) {
         return new Pair(variable1, variable2);
     }              
 }
