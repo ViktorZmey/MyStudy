@@ -20,11 +20,16 @@ import com.mycompany.figures.*;
 import com.mycompany.Internetshop.*;
 import com.mycompany.postalsystem.*;
 import com.mycompany.logging.*;
+<<<<<<< HEAD
 import com.mycompany.methodchecksum.*;
 import com.mycompany.separatorcharacter.*;
 import com.mycompany.sixdecimalplaces.*;
 import com.mycompany.deserializeanimalarray.*;
 import com.mycompany.genericpair.*;
+=======
+import com.mycompany.convertsthemtoastring.*;
+import java.io.IOException;
+>>>>>>> 19d257e (решение с тестами // и вторым способом  из интернета)
 
 /**
  *
@@ -32,7 +37,11 @@ import com.mycompany.genericpair.*;
  */
 public class MyStudy {
       
+<<<<<<< HEAD
     public static void main(String[] args) {        
+=======
+    public static void main(String[] args) throws IOException {
+>>>>>>> 19d257e (решение с тестами // и вторым способом  из интернета)
 //        ClassPhoneTests.run();
 //        ClassPersonTests.run();
 //        ClassMatrixTest.run();
@@ -49,10 +58,14 @@ public class MyStudy {
 //        InternetShopTest.run();       
 //        PostalSystemTest.run();
 //        ClassTest.run();
+<<<<<<< HEAD
 //        MethodChecksum.run();
 //        SeparatorCharacter.run();
 //        SixDecimalPlacesTest.run();
 //        DeserializeAnimalArrayTest.run();
 //        GenericPairTest.run();
+=======
+        ConvertsThemToAStringTest.run();
+>>>>>>> 19d257e (решение с тестами // и вторым способом  из интернета)
     } 
 }
