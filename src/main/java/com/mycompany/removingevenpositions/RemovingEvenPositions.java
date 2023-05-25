@@ -4,10 +4,8 @@
  */
 package com.mycompany.removingevenpositions;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-
+import java.io.*;
+import java.util.*;
 /**
  *
  * @author viktor
@@ -25,5 +23,23 @@ public class RemovingEvenPositions {
         } catch (Exception ex) {
             return;
         }
+        
+        Scanner sc = new Scanner(targetStream);
+        int count = 0;
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        
+        while (sc.hasNextInt()){
+            if (count % 2 != 0){
+                arrayList.add(sc.nextInt());
+            }
+            else sc.next();
+            count++;
+        }
+        sc.close();
+        
+        Collections.reverse(arrayList);
+//        Integer[] array = arrayList.toArray(new Integer[arrayList.size()]);
+//        System.out.println(Arrays.toString(array)); 
+        arrayList.forEach(e -> System.out.print(e + " "));
     }
 }
