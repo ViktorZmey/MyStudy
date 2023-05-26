@@ -10,16 +10,17 @@ import java.util.stream.IntStream;
  *
  * @author viktor
  */
-public class PseudoRandomStream {
+public class PseudoRandomStreamTest {
     public static void run() {
         test();
     }
     
     static void test() {
-        System.out.println(pseudoRandomStream(13));
+        IntStream intStream = pseudoRandomStream(13);       
+        intStream.limit(10).forEach(e -> System.out.print(e + " "));
     }
     
     public static IntStream pseudoRandomStream(int seed) {
-    return null; 
-    }
+        return IntStream.iterate(  seed, n -> ((n * n) / 10) % 1000);
+    }   
 }
