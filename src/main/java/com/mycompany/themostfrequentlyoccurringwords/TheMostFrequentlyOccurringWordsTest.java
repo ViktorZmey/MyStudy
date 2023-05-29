@@ -57,18 +57,6 @@ public class TheMostFrequentlyOccurringWordsTest {
             .map(pattern::split)
             .flatMap(Arrays::stream)
             .collect(Collectors.groupingBy((e)->e, Collectors.reducing(0, (e) -> 1, Integer::sum)))
-//            .reduce(
-//                new HashMap<String, Integer>(),
-//                (map, word) -> { 
-//                    Integer count = map.getOrDefault(word, 0);
-//                    map.put(word, count + 1);
-//                    return map;
-//                },
-//                (lhs, rhs) -> {
-//                    rhs.forEach((key,value) -> lhs.merge(key, value, Integer::sum));
-//                    return lhs;
-//                }
-//            )
             .entrySet()
             .stream()
             .sorted(
@@ -76,19 +64,10 @@ public class TheMostFrequentlyOccurringWordsTest {
                 .comparing(Map.Entry<String,Integer>::getValue, Comparator.reverseOrder())
                 .thenComparing(Comparator.comparing(Map.Entry<String,Integer>::getKey))
             )
-//            .sorted(Comparator.comparing(Map.Entry<String,Integer>::getKey))
-//            .sorted(Comparator.comparing(Map.Entry<String,Integer>::getValue, Comparator.reverseOrder()))
-//            .sorted((lhs, rhs) -> {
-//                if (lhs.getValue() == rhs.getValue()) {
-//                    return lhs.getKey().compareTo(rhs.getKey());
-//                } else {
-//                    return rhs.getValue() - lhs.getValue();
-//                }
-//            })
             .limit(10);
         
         outputStream.forEach((entry) -> {
-            System.err.println(entry.getKey() + ": " + entry.getValue());
+            System.out.println(entry.getKey());
         });
     }
 }
