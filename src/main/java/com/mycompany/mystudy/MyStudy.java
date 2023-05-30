@@ -29,6 +29,7 @@ import com.mycompany.convertsthemtoastring.*;
 import com.mycompany.symmetricdifference.*;
 import com.mycompany.removingevenpositions.*;
 import com.mycompany.combinationoffunctions.*;
+import com.mycompany.themostfrequentlyoccurringwords.*;
 
 /**
  *
@@ -62,5 +63,6 @@ public class MyStudy {
 //        SymmetricDifferenceTest.run();
 //        RemovingEvenPositions.run();
 //        CombinationOfFunctionsTest.run();
+//        TheMostFrequentlyOccurringWordsTest.run();
     } 
 }
