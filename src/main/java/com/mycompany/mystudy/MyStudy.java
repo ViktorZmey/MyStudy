@@ -30,6 +30,7 @@ import com.mycompany.symmetricdifference.*;
 import com.mycompany.removingevenpositions.*;
 import com.mycompany.combinationoffunctions.*;
 import com.mycompany.themostfrequentlyoccurringwords.*;
+import com.mycompany.pseudorandomstream.*;
 
 /**
  *
@@ -64,5 +65,6 @@ public class MyStudy {
 //        RemovingEvenPositions.run();
 //        CombinationOfFunctionsTest.run();
 //        TheMostFrequentlyOccurringWordsTest.run();
+//        PseudoRandomStreamTest.run();
     } 
 }
