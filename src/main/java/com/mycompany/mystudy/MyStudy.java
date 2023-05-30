@@ -28,6 +28,7 @@ import com.mycompany.genericpair.*;
 import com.mycompany.convertsthemtoastring.*;
 import com.mycompany.symmetricdifference.*;
 import com.mycompany.removingevenpositions.*;
+import com.mycompany.combinationoffunctions.*;
 
 /**
  *
@@ -60,5 +61,6 @@ public class MyStudy {
 //        ConvertsThemToAStringTest.run();
 //        SymmetricDifferenceTest.run();
 //        RemovingEvenPositions.run();
+//        CombinationOfFunctionsTest.run();
     } 
 }
