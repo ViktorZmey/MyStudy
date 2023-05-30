@@ -50,9 +50,9 @@ public class TheMostFrequentlyOccurringWordsTest {
         sc.forEachRemaining(list::add);
         sc.close();
         
-        Pattern pattern = Pattern.compile("\\P{L}+");
+        Pattern pattern = Pattern.compile("[^\\p{L}\\p{Digit}]+");
         
-        var outputStream = list.stream()
+        list.stream()
             .map(String::toLowerCase)
             .map(pattern::split)
             .flatMap(Arrays::stream)
@@ -64,10 +64,9 @@ public class TheMostFrequentlyOccurringWordsTest {
                 .comparing(Map.Entry<String,Integer>::getValue, Comparator.reverseOrder())
                 .thenComparing(Comparator.comparing(Map.Entry<String,Integer>::getKey))
             )
-            .limit(10);
-        
-        outputStream.forEach((entry) -> {
-            System.out.println(entry.getKey());
-        });
+            .limit(10)
+            .forEach((entry) -> {
+                System.out.println(entry.getKey() + ": " + entry.getValue());
+            });
     }
 }
