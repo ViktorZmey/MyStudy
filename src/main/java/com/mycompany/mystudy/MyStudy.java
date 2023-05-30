@@ -61,6 +61,6 @@ public class MyStudy {
 //        ConvertsThemToAStringTest.run();
 //        SymmetricDifferenceTest.run();
 //        RemovingEvenPositions.run();
-        CombinationOfFunctionsTest.run();
+//        CombinationOfFunctionsTest.run();
     } 
 }
