@@ -14,45 +14,42 @@ import java.util.stream.*;
  * @author viktor
  */
 public class TheMostFrequentlyOccurringWordsTest {
+    
+    private static File initialFile = new File("./src/main/java/com/mycompany/themostfrequentlyoccurringwords/test.txt");
+    
     public static void run() {
         test();
+        System.out.println("");
+        test1();
     }
     
     static void test() {
-        
-//        try(BufferedReader br = new BufferedReader (new InputStreamReader(System.in)); 
-//                BufferedWriter bw = new BufferedWriter(new FileWriter("notes5.txt")))
-//        {
-//           // чтение построчно
-//            String text;
-//            while(!(text=br.readLine()).equals("ESC")){
-//                  
-//                bw.write(text + "\n");
-//                bw.flush();
-//            }
-//        }
-//        catch(IOException ex){
-//              
-//            System.out.println(ex.getMessage());
-//        } 
-        
-
-        File initialFile = new File("./src/main/java/com/mycompany/themostfrequentlyoccurringwords/test.txt");                
-        InputStream targetStream;
         try {
-            targetStream = new FileInputStream(initialFile);
-        } catch (Exception ex) {
-            return;
+            var fileStream = new FileInputStream(initialFile);
+            Scanner sc = new Scanner(fileStream);
+            List<String> list = new ArrayList<>();
+            sc.forEachRemaining(list::add);
+            sc.close();
+            printToSystemOutMostFrequentlyOccurringWords(list);
+        } catch (Exception ex) { }
+    }
+    
+    private static void test1() {
+        try {
+            // чтение построчно
+            var fileStream = new FileInputStream(initialFile);
+            var inputStreamReader = new InputStreamReader(fileStream);
+            BufferedReader br = new BufferedReader(inputStreamReader);
+            var list = br.lines().toList();
+            printToSystemOutMostFrequentlyOccurringWords(list);
         }
-        
-        Scanner sc = new Scanner(targetStream);
-        List<String> list = new ArrayList<>();
-        sc.forEachRemaining(list::add);
-        sc.close();
-        
+        catch(Exception ex){ } 
+    }
+    
+    private static void printToSystemOutMostFrequentlyOccurringWords(List<String> from) {
         Pattern pattern = Pattern.compile("[^\\p{L}\\p{Digit}]+");
         
-        list.stream()
+        from.stream()
             .map(String::toLowerCase)
             .map(pattern::split)
             .flatMap(Arrays::stream)
